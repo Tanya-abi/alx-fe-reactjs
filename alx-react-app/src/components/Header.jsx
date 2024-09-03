@@ -1,4 +1,4 @@
-function header() {
+function Header() {
 
 return (
 <header>
@@ -7,4 +7,4 @@ return (
 );
 }
 
-export default header;
+export default Header;
