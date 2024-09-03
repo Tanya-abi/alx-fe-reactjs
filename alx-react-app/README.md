@@ -1,9 +1,8 @@
-Tasks
+# React + Vite
 
-0. Create your first React App
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-1. Modify JSX in a Pre-built React Component
+Currently, two official plugins are available:
 
-2. Create Specific Components in a React Application
-
-3. Create a User Profile Card Using Props
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
