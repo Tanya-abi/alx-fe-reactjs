@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "title": "Lemon Herb Grilled Chicken",
+        "summary": "A light and zesty grilled chicken marinated in a mix of lemon juice, olive oil, garlic, and fresh herbs. Perfect for a healthy and flavorful dinner",
+        "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.feastingathome.com%2Fgrilled-lemon-herb-chicken%2F&psig=AOvVaw329D0cmcE0x-4MsnllNf_4&ust=1727027684136000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIDyjM_N1IgDFQAAAAAdAAAAABAE"
+    },
+    {
+        "id": 1,
+        "title": "Creamy Mushroom Pasta",
+        "summary": "A quick and easy pasta dish made with sautéed mushrooms, garlic, and a creamy Parmesan sauce. Comfort food that’s both rich and satisfying.",
+        "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.saltandlavender.com%2Fcreamy-mushroom-pasta%2F&psig=AOvVaw1zz0Zmep7BScLuoKI1r4fH&ust=1727027636301000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOCIwLjN1IgDFQAAAAAdAAAAABAJ"
+    },
+    {
+        "id": 1,
+        "title": "Avocado Toast with Poached Eggs",
+        "summary": "A simple yet delicious breakfast or snack featuring creamy mashed avocado on toasted sourdough, topped with perfectly poached eggs and a sprinkle of chili flakes.",
+        "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftheadventurebite.com%2Fpoached-egg-and-avocado-toast%2F&psig=AOvVaw0NB3qkXTBDzVB_jZLId1Dx&ust=1727027604775000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPiJ7ajN1IgDFQAAAAAdAAAAABAE"
+    },
+    {
+        "id": 1,
+        "title": "Lemon Herb Grilled Chicken",
+        "summary": "A light and zesty grilled chicken marinated in a mix of lemon juice, olive oil, garlic, and fresh herbs. Perfect for a healthy and flavorful dinner",
+        "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftheadventurebite.com%2Fpoached-egg-and-avocado-toast%2F&psig=AOvVaw2XsOAetOnDKuVVzeg4WJPZ&ust=1727027471912000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKjG6unM1IgDFQAAAAAdAAAAABAE"
+    }
+    
+]
