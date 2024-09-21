@@ -51,7 +51,7 @@ const AddRecipeForm = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6">
+    <div className="max-w-lg mx-auto p-6 shadow-lg bg-white rounded-lg"> {/* Added shadow and background */}
       <h1 className="text-3xl font-bold text-center mb-6">Add a New Recipe</h1>
 
       <form onSubmit={handleSubmit}>
