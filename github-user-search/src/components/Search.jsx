@@ -47,6 +47,7 @@ const Search = () => {
         <div>
           <img src={userData.avatar_url} alt={userData.name} width="100" />
           <h2>{userData.name}</h2>
+          <p>Username: {userData.login}</p> {/* Displaying the 'login' field */}
           <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
             View GitHub Profile
           </a>
@@ -57,4 +58,3 @@ const Search = () => {
 };
 
 export default Search;
-
