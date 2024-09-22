@@ -3,20 +3,22 @@ import { fetchUserData } from '../services/githubService';
 
 const Search = () => {
   const [username, setUsername] = useState('');
+  const [location, setLocation] = useState('');
+  const [minRepos, setMinRepos] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [userData, setUserData] = useState(null);
+  const [results, setResults] = useState([]);
 
-  const handleSearch = async (username) => {
+  const handleSearch = async (searchParams) => {
     setLoading(true);
     setError(null);
-    setUserData(null);
+    setResults([]);
 
     try {
-      const data = await fetchUserData(username);
-      setUserData(data);
+      const users = await fetchUserData(searchParams);
+      setResults(users);
     } catch (err) {
-      setError('Looks like we cant find the user');
+      setError('Looks like we cant find any users');
     } finally {
       setLoading(false);
     }
@@ -24,33 +26,64 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username.trim()) {
-      handleSearch(username);
-    }
+    handleSearch({ username, location, minRepos });
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter GitHub username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
+      <div className="max-w-md mx-auto mt-10 p-5 bg-gray-100 rounded-lg shadow-lg">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-gray-700">GitHub Username</label>
+            <input
+              type="text"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter GitHub username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700">Location</label>
+            <input
+              type="text"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700">Minimum Repositories</label>
+            <input
+              type="number"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter minimum repositories"
+              value={minRepos}
+              onChange={(e) => setMinRepos(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-md">
+            Search
+          </button>
+        </form>
+      </div>
 
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {userData && (
-        <div>
-          <img src={userData.avatar_url} alt={userData.name} width="100" />
-          <h2>{userData.name}</h2>
-          <p>Username: {userData.login}</p> {/* Displaying the 'login' field */}
-          <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
-            View GitHub Profile
-          </a>
+      {loading && <p className="text-center mt-4">Loading...</p>}
+      {error && <p className="text-center mt-4 text-red-500">{error}</p>}
+      {results.length > 0 && (
+        <div className="mt-5 space-y-4">
+          {results.map((user) => (
+            <div key={user.id} className="p-4 bg-gray-100 rounded-lg shadow">
+              <img src={user.avatar_url} alt={user.login} className="w-16 h-16 rounded-full" />
+              <h2 className="text-xl">{user.login}</h2>
+              <p>Location: {user.location || 'N/A'}</p>
+              <p>Repositories: {user.public_repos || 'N/A'}</p>
+              <a href={user.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500">
+                View GitHub Profile
+              </a>
+            </div>
+          ))}
         </div>
       )}
     </div>
@@ -58,3 +91,5 @@ const Search = () => {
 };
 
 export default Search;
+
+
